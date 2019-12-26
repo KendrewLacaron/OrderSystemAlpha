@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K5OrderBeta.Android", "K5OrderBeta\K5OrderBeta.Android\K5OrderBeta.Android.csproj", "{50181EA4-1FD7-4270-A38D-58251BD4E556}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "K5OrderBeta", "K5OrderBeta\K5OrderBeta\K5OrderBeta.shproj", "{A64574EA-627F-4480-B6FA-EF612220B910}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		K5OrderBeta\K5OrderBeta\K5OrderBeta.projitems*{50181ea4-1fd7-4270-a38d-58251bd4e556}*SharedItemsImports = 4
+		K5OrderBeta\K5OrderBeta\K5OrderBeta.projitems*{a64574ea-627f-4480-b6fa-ef612220b910}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50181EA4-1FD7-4270-A38D-58251BD4E556}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8577664-1C13-440C-ACA9-6AA2AC417DD6}
+	EndGlobalSection
+EndGlobal
