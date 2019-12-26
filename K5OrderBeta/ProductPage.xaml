@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="K5OrderBeta.ProductPage"
+             Title="Product Info">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <!--<StackLayout VerticalOptions="Start" BackgroundColor="#3F51B5" Orientation="Horizontal" Padding="10" Spacing="15">
+                <ImageButton x:Name="btnBack" Aspect="AspectFit"  BackgroundColor="#3F51B5" Source="back.png" Clicked="BtnBack_Clicked" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"  />
+                <ImageButton x:Name="btnCart" Aspect="AspectFit" BackgroundColor="#3F51B5"  Source="cartblack.png" Clicked="BtnCart_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"  />
+                <Image x:Name="btnAddProd" Aspect="AspectFit"  Source="OnonokiPP.jpg"  HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" />
+                <ImageButton BackgroundColor="#3F51B5" x:Name="btnMore" Aspect="AspectFit"  Source="more.png" Clicked="BtnMore_Clicked" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"  />
+            </StackLayout>-->
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout VerticalOptions="StartAndExpand" Padding="20">
+                    <Image 
+                           x:Name="productImage"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       HeightRequest="300"
+                       WidthRequest="300"
+                       Source="k5all"
+                        
+                    />
+                    <!--{Binding productImage}-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="3*" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0"
+                               Grid.ColumnSpan="3"
+                               x:Name="productName"
+                       VerticalOptions="Center"
+                       Text="{Binding productName}"
+                       FontSize="Large"
+                       FontAttributes="Bold" />
+
+                        <Label Grid.Column="0"
+                              x:Name="productCode"
+                       VerticalOptions="Center"
+                       Text="{Binding productCode}"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       IsVisible="False"/>
+
+                        <!--<Label Text="{Binding productDesc}"
+                       Grid.Row="1"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       FontAttributes="Italic" />-->
+
+                        <Label Text="IB"
+                       Grid.Row="1"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       FontAttributes="Bold" />
+
+                        <Label x:Name="productIB" Text="{Binding productIB}"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                        />
+
+                        <Label Text="PC"
+                       Grid.Row="1"
+                       Grid.Column="3"
+                               
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       FontAttributes="Bold" />
+
+                        <Label x:Name="productPC" Text="{Binding productPC}"
+                       Grid.Row="1"
+                       Grid.Column="4"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       />
+
+                        <!--<Label Text="CS"
+                       Grid.Row="3"
+                       Grid.Column="2"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       FontAttributes="Bold" />
+
+                        <Label x:Name="productCS" Text="{Binding productCS}"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                        />-->
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+
+            <Frame HasShadow="True" BorderColor="WhiteSmoke" Margin="5" VerticalOptions="Center">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White">
+                <Label Text="Order Details"
+                       FontSize="Small"
+                       VerticalOptions="Start"
+                       FontAttributes="Bold" />
+                <Grid RowSpacing="20" ColumnSpacing="20">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="5*" />
+                    </Grid.RowDefinitions>
+
+
+                    <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                        <!--<Label VerticalTextAlignment="Center" Text="IB" />-->
+                        <Entry x:Name="txtIB" Keyboard="Numeric" Placeholder="IB" PlaceholderColor="Accent" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                        <!--<Label VerticalTextAlignment="Center" Text="PC" />-->
+                            <Entry x:Name="txtPC" Keyboard="Numeric" Placeholder="PC" PlaceholderColor="Accent"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                        <!--<Label VerticalTextAlignment="Center" Text="CS" />-->
+                            <Entry x:Name="txtCS" Keyboard="Numeric" Placeholder="CS" PlaceholderColor="Accent"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                        <!--<Label VerticalTextAlignment="Center" Text="Other" />-->
+                            <Entry x:Name="txtOther" Keyboard="Numeric" Placeholder="Others" IsEnabled="False" PlaceholderColor="Accent"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            </Frame>
+            <StackLayout VerticalOptions="EndAndExpand" Padding="10">
+                <Grid ColumnSpacing="0" >
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Color="BlueViolet" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+                    <!--<ImageButton Grid.Column="0" x:Name="btnReport"  Aspect="AspectFit" Source="heart.png"  BackgroundColor="PaleVioletRed"  VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                    <ImageButton Grid.Column="1" x:Name="btnFav"  Aspect="AspectFit" Source="star.png"  BackgroundColor="Orchid" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>-->
+                    <ImageButton Grid.Column="0" Grid.ColumnSpan="3" x:Name="btnAddToCart" HorizontalOptions="FillAndExpand" Clicked="BtnAddToCart_Clicked"  Aspect="AspectFit" HeightRequest="50"  Source="cart.png" BackgroundColor="BlueViolet"  VerticalOptions="Center" />
+                </Grid>
+            </StackLayout>
+
+
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

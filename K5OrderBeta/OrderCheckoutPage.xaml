@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="K5OrderBeta.OrderCheckoutPage">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout VerticalOptions="Start" Orientation="Horizontal" Padding="10">
+                <Label FontAttributes="Italic" HorizontalOptions="Start" WidthRequest="150" TextColor="PaleVioletRed" Text="Enter Signature and PO Number :" FontSize="Medium" FontFamily="Futura"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+         
+            </StackLayout>
+
+            <StackLayout VerticalOptions="End" Orientation="Horizontal" Padding="10">
+                <Label FontAttributes="Italic" HorizontalOptions="Start" WidthRequest="150" TextColor="PaleVioletRed" Text="PO Number :" FontSize="Medium" FontFamily="Futura"/>
+                <Entry x:Name="txtPONumber"  HorizontalOptions="CenterAndExpand" WidthRequest="200" HorizontalTextAlignment="Center" FontAttributes="Bold"  FontSize="Medium" FontFamily="Futura"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="End" HeightRequest="80">
+                <Grid ColumnSpacing="0" >
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Color="BlueViolet" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+                    <!--<ImageButton Grid.Column="0" x:Name="btnReport"  Aspect="AspectFit" Source="heart.png"  BackgroundColor="PaleVioletRed"  VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                    <ImageButton Grid.Column="1" x:Name="btnFav"  Aspect="AspectFit" Source="star.png"  BackgroundColor="Orchid" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>-->
+                    <ImageButton x:Name="btnFinalCheckOut" Grid.ColumnSpan="3" Clicked="BtnFinalCheckOut_Clicked"  Aspect="AspectFit"  Source="cart.png" BackgroundColor="BlueViolet"  VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

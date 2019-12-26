@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="K5OrderBeta.TransactionLogPage">
+  <!--Pages can be added as references or inline-->
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Finished" >
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <SearchBar TextChanged="SearchBar_TextChanged"></SearchBar>
+            <ListView x:Name="mainTransacList" ItemSelected="MainTransacList_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="DodgerBlue"
+                               Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding customerName}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                        <Label IsVisible="False" Text="{Binding poNumber}" VerticalTextAlignment="Center" HorizontalOptions="End" />
+                                        <Label IsVisible="False" Text="{Binding customerCode}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                        <Label IsVisible="False" Text="{Binding docNum}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Cancelled" >
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <SearchBar TextChanged="SearchBar_TextChanged_1"></SearchBar>
+            <ListView x:Name="cancelTransacList" ItemSelected="CancelTransacList_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="MediumVioletRed"
+                               Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding customerName}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                        <Label IsVisible="False" Text="{Binding poNumber}" VerticalTextAlignment="Center" HorizontalOptions="End" />
+                                        <Label IsVisible="False" Text="{Binding customerCode}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                        <Label IsVisible="False" Text="{Binding docNum}" VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

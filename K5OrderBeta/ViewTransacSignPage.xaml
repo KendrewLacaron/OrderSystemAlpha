@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localConverter="clr-namespace:K5OrderBeta.Converter"
+             x:Class="K5OrderBeta.ViewTransacSignPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <localConverter:ByteToImageConverter x:Key="byteToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image x:Name="imgSignature"
+               HorizontalOptions="Center"
+               Source="{Binding signature, Converter={StaticResource byteToImage}}"
+               WidthRequest="500" HeightRequest="500"
+                   >
+            </Image>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

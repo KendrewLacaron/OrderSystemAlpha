@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="K5OrderBeta.LoginPage"
+             BackgroundColor="#3F51B5"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="btnAddUser"  Text="U" Clicked="BtnAddUser_Clicked" >
+        </ToolbarItem>
+        <ToolbarItem  x:Name="btnAddProduct"  Text="P" Clicked="BtnAddProduct_Clicked" >
+        </ToolbarItem>
+        <ToolbarItem  x:Name="btnAddCustomer"  Text="C" Clicked="BtnAddCustomer_Clicked" >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="20" Padding="20" >
+            <Image Source="k5all" HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Orientation="Vertical" Spacing="10" Padding="20">
+                <Entry x:Name="txtUser"  FontAttributes="Bold" Placeholder="Email / Username"  TextColor="White"  />
+                <Entry x:Name="txtPass"  FontAttributes="Bold" Placeholder="Password" IsPassword="True"  TextColor="White"  />
+            </StackLayout>
+            <Button VerticalOptions="End" x:Name="btnLogin" BorderColor="WhiteSmoke" Text="Login" Clicked="BtnLogin_Clicked" BackgroundColor="White" Padding="10" Margin="20" BorderWidth="0"/>
+            <ImageButton x:Name="btnConnect" Source="settingsu" Clicked="BtnConnect_Clicked" BackgroundColor="Transparent" HorizontalOptions="Center" WidthRequest="30" HeightRequest="30" VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

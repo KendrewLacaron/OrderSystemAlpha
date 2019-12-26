@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="K5OrderBeta.UserActivityPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem  x:Name="btnAddCust"  Text="+" Clicked="BtnAddCust_Clicked" >-->
+        <!--</ToolbarItem>-->
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" BackgroundColor="#3F51B5" Padding="10" VerticalOptions="Start" >
+                <Image Source="k5" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="K5 Ordering" VerticalTextAlignment="Center" FontSize="Small" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
+                <ImageButton BackgroundColor="#3F51B5" Source="more" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Clicked="BtnFunc_Clicked"/>
+            </StackLayout>
+            <Frame HasShadow="True" BorderColor="WhiteSmoke" Margin="5">
+                <StackLayout VerticalOptions="Start" Orientation="Vertical" BackgroundColor="White" Padding="5" Spacing="10">
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label FontAttributes="None" Text="Welcome" FontSize="Small" FontFamily="Futura"/>
+                        <Label x:Name="lblCurrentUser" FontAttributes="Bold" FontSize="Small" FontFamily="Futura"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label FontAttributes="None" Text="Last Import Time" FontSize="Small" FontFamily="Futura"/>
+                        <Label x:Name="lblImportTime" FontAttributes="Bold" FontSize="Small" FontFamily="Futura" TextColor="HotPink"/>
+                        <!--<ImageButton BackgroundColor="WhiteSmoke" x:Name="btnFunc" Clicked="BtnFunc_Clicked" Source="func" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center"/>-->
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label FontAttributes="None" Text="Last Export Time" FontSize="Small" FontFamily="Futura"/>
+                        <Label x:Name="lblExportTime" FontAttributes="Bold" FontSize="Small" FontFamily="Futura" TextColor="Green"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+                <Label FontAttributes="Italic" Text="Select Customer :" FontSize="Medium" FontFamily="Futura"/>
+                <SearchBar TextChanged="SearchBar_TextChanged"></SearchBar>
+                <ScrollView>
+                    <StackLayout>
+                        <ListView x:Name="custList" ItemSelected="CustList_ItemSelected" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ContentView Padding="5">
+                                            <Frame OutlineColor="Accent"
+                               Padding="10">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout>
+                                                        <Label x:Name="lblCustName" VerticalTextAlignment="Center" Text="{Binding customerName}"  HorizontalOptions="StartAndExpand" />
+                                                        <Label x:Name="lblCustCode" Text="{Binding customerCode}" IsVisible="False"  HorizontalOptions="StartAndExpand" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </ContentView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout VerticalOptions="End" Orientation="Horizontal" Padding="10" Spacing="2">
+                    <Label FontAttributes="Italic" HorizontalOptions="StartAndExpand" TextColor="PaleVioletRed" Text="Current Customer :" FontSize="Medium" FontFamily="Futura"/>
+                    <Entry x:Name="txtCustomer"  HorizontalOptions="FillAndExpand" WidthRequest="200" HorizontalTextAlignment="Center"  IsEnabled="False" FontAttributes="Bold"  FontSize="Small" FontFamily="Futura"/>
+                    <Entry IsVisible="False" x:Name="txtCustomerCode" IsEnabled="False" FontAttributes="Bold"  FontSize="Medium" FontFamily="Futura"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" HeightRequest="120">
+                <Grid ColumnSpacing="0" >
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Color="BlueViolet" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Color="BlueViolet" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="btnStartTransac" Grid.Column="0" Grid.ColumnSpan="3" Clicked="BtnStartTransac_Clicked" Text="Start Transaction" HorizontalOptions="CenterAndExpand" BorderWidth="0" BackgroundColor="BlueViolet" FontAttributes="Bold" FontFamily="Futura" FontSize="Medium" TextColor="White"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

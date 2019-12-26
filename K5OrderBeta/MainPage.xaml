@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="K5OrderBeta.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Spacing="10" Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" BackgroundColor="#3F51B5" Padding="10" VerticalOptions="Start" >
+            <Image Source="k5" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50"/>
+            <Label Text="K5 Ordering" VerticalTextAlignment="Center" FontSize="20" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
+            <!--<Image x:Name="btnProfile" Aspect="AspectFit"  Source="OnonokiPP.jpg"  HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" />-->
+            <ImageButton BackgroundColor="#3F51B5" x:Name="btnMore" Aspect="AspectFit"  Source="more.png" Clicked="BtnMore_Clicked" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"  />
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Grid ColumnSpacing="10" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <SearchBar x:Name="SearchBar" TextChanged="SrcProducts_TextChanged" Grid.Column="0" Placeholder="Search K5" PlaceholderColor="Blue" FontAttributes="Bold" />
+                <ImageButton x:Name="btnCart"  BackgroundColor="White" Aspect="AspectFit" Grid.Column="1"  Source="cartblack.png" Clicked="BtnCart_Clicked"  VerticalOptions="Center" HeightRequest="30" WidthRequest="30" />
+                <Label Grid.Column="2" VerticalTextAlignment="Center" FontSize="Small" Text="0" x:Name="txtCartVal" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+            </Grid>
+        </StackLayout>
+        <ScrollView>
+
+            <CollectionView x:Name="itemList" SelectionChanged="ItemList_SelectionChanged" SelectionMode="Single" VerticalOptions="CenterAndExpand" >
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" Margin="12">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <!--{Binding productImage}-->
+                            <Image Source="k5all" 
+                                   Grid.Row="0"
+                                   Aspect="AspectFill"
+                                   WidthRequest="100"
+                                   HeightRequest="150" />
+
+                            <StackLayout Grid.Row="1" >
+
+                                <Label Grid.Column="1"
+                                       VerticalOptions="Center"
+                                       Text="{Binding productCode}"
+                                       FontAttributes="Bold"
+                                       IsVisible="False"/>
+
+                                <Label Grid.Column="1"
+                                       VerticalOptions="Center"
+                                       Text="{Binding productName}"
+                                       FontAttributes="Bold" />
+
+
+                                <Label Text="{Binding productDesc}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       VerticalOptions="Start"
+                                       FontAttributes="Italic" />
+
+                                <!--<Button Text="Buy"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        VerticalOptions="End"
+                                        BackgroundColor="WhiteSmoke"
+                                        HorizontalOptions="Center"
+                                        Clicked="BtnFProd_Clicked"
+                                        BorderWidth="1.5"
+                                        CornerRadius="3"
+                                        BorderColor="Accent"
+                                        TextColor="BlueViolet"
+                                        ClassId="{Binding productCode}"
+                                        />-->
+                            </StackLayout>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>
